@@ -1,6 +1,6 @@
 package com.gmail.skymaxplay.skitty.controllers;
 
-import com.gmail.skymaxplay.skitty.SKiTTY;
+import com.gmail.skymaxplay.skitty.SKiTTy;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +31,7 @@ public class MainController implements Initializable {
         });
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("../../../../../view/sessionStage.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/view/sessionStage.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Lista sesji SSH");
             stage.setScene(new Scene(root, 600, 400));
@@ -44,6 +44,6 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        SKiTTY.getInstance().setMainController(this);
+        SKiTTy.getInstance().setMainController(this);
     }
 }

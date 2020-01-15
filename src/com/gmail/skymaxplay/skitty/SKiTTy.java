@@ -9,10 +9,10 @@ import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
 
-public class SKiTTY extends Application {
+public class SKiTTy extends Application {
 
     @Getter
-    private static SKiTTY instance;
+    private static SKiTTy instance;
     @Getter
     private Stage primaryStage;
     @Getter
@@ -23,7 +23,7 @@ public class SKiTTY extends Application {
     public void start(Stage primaryStage) throws Exception {
         instance = this;
 
-        Parent root = FXMLLoader.load(getClass().getResource("../../../../view/mainStage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/mainStage.fxml"));
         primaryStage.setTitle("SKiTTy");
         primaryStage.setScene(new Scene(root, 1280, 720));
 

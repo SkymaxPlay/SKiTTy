@@ -1,6 +1,6 @@
 package com.gmail.skymaxplay.skitty.controllers;
 
-import com.gmail.skymaxplay.skitty.SKiTTY;
+import com.gmail.skymaxplay.skitty.SKiTTy;
 import com.gmail.skymaxplay.skitty.enums.SessionType;
 import com.gmail.skymaxplay.skitty.managers.SessionManager;
 import com.gmail.skymaxplay.skitty.objects.OutputConsoleHandler;
@@ -152,7 +152,7 @@ public class SessionListController implements Initializable {
         textArea.setEditable(false);
         textArea.appendText("[SKiTTy] Connecting...\n");
         Tab tab = new Tab(name.getText() == null ? user.getText() + "@" + host.getText() : name.getText(), splitPane);
-        MainController mainController = SKiTTY.getInstance().getMainController();
+        MainController mainController = SKiTTy.getInstance().getMainController();
         mainController.tabPane.getTabs().add(tab);
         mainController.tabPane.getSelectionModel().select(tab);
 
@@ -200,10 +200,10 @@ public class SessionListController implements Initializable {
                         bw = new BufferedWriter(new OutputStreamWriter(channel.getOutputStream()));
                         bw.write(text + "\n");
                         bw.flush();
-                        bw.close();
+                        //bw.close();
                         commandField.setText(null);
                     } catch (IOException ex) {
-                        ex.printStackTrace();
+                        ex.printStackTrace(ps);
                     }
                 }
             });
@@ -212,6 +212,8 @@ public class SessionListController implements Initializable {
             textArea.appendText("[SKiTTy] Error while connecting! Message: " + e.getMessage());
             return;
         }
+
+        SKiTTy.getInstance().getPrimaryStage().requestFocus();
 
         tab.onClosedProperty().addListener(e -> {
             try {
@@ -223,7 +225,6 @@ public class SessionListController implements Initializable {
                 ex.printStackTrace();
             }
         });
-        SKiTTY.getInstance().getPrimaryStage().requestFocus();
     }
 
     private boolean validateConnectionData() {
