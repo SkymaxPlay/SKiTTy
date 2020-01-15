@@ -1,4 +1,6 @@
 # SKiTTy
+
+#### About
 Simple client SSH written in Java
 
 #### Used libraries
