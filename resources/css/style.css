@@ -1,0 +1,20 @@
+.box {
+    -fx-border-color: #92969a;
+    -fx-border-width: 1px 1px 0px 0px;
+}
+
+.buttons {
+    -fx-fill: #92969a;
+}
+
+.buttons:hover {
+    -fx-fill: #4a5057;
+}
+
+.selectedSession {
+    -fx-background-color:  #ccc;
+}
+
+.session-list:hover {
+    -fx-background-color:  #c2c2c2;
+}

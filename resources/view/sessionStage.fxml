@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gmail.skymaxplay.skitty.controllers.SessionListController">
+   <left>
+      <ScrollPane fx:id="sessionList" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox prefHeight="300.0" prefWidth="185.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <HBox prefHeight="26.0" prefWidth="175.0">
+                     <children>
+                        <Label text="SSH">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Label text="Nazwa sesji">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="15.0" layoutY="14.0" prefHeight="21.0" prefWidth="69.0" text="Nazwa:" />
+            <Label layoutX="15.0" layoutY="50.0" prefHeight="21.0" prefWidth="57.0" text="Host:" />
+            <Label layoutX="15.0" layoutY="90.0" prefHeight="21.0" prefWidth="80.0" text="Użytkownik:" />
+            <Label layoutX="15.0" layoutY="127.0" prefHeight="21.0" prefWidth="43.0" text="Hasło:" />
+            <TextField fx:id="name" layoutX="100.0" layoutY="10.0" prefHeight="31.0" prefWidth="281.0" />
+            <TextField fx:id="host" layoutX="100.0" layoutY="46.0" prefHeight="31.0" prefWidth="182.0" />
+            <TextField fx:id="port" layoutX="329.0" layoutY="46.0" prefHeight="25.0" prefWidth="52.0" />
+            <TextField fx:id="user" layoutX="100.0" layoutY="86.0" prefHeight="31.0" prefWidth="182.0" />
+            <Label layoutX="290.0" layoutY="50.0" text="Port:" />
+            <PasswordField fx:id="password" layoutX="100.0" layoutY="123.0" prefHeight="31.0" prefWidth="182.0" />
+            <Button fx:id="connect" layoutX="321.0" layoutY="321.0" mnemonicParsing="false" onAction="#onConnect" text="Połącz">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="45.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="create" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#onCreateSession" text="+" />
+            <Button fx:id="remove" layoutX="49.0" layoutY="7.0" mnemonicParsing="false" onAction="#onRemoveSession" text="-" />
+            <Button fx:id="save" layoutX="85.0" layoutY="7.0" mnemonicParsing="false" onAction="#onSaveSession" text="Zapisz" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
